@@ -1,0 +1,11 @@
+{
+	"name"			: "mailchimp-campaigns",
+	"description"	: "MailChimp Campaigns - the Meteor way",
+	"homepage"		: "https://github.com/MiroHibler/meteor-mailchimp-campaigns",
+	"author"		: "Miro Hibler (http://miro.hibler.me)",
+	"version"		: "0.1.0",
+	"git"			: "https://github.com/MiroHibler/meteor-mailchimp-campaigns.git",
+	"packages"		: {
+		"mailchimp": "0.1.0"
+	}
+}

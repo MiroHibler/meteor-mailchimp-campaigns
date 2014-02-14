@@ -1,0 +1,11 @@
+<template name="MailChimpCampaigns">
+{{#if campaigns}}
+	<ul>
+		{{#each campaigns.data}}
+			{{> MailChimpCampaignsItem}}
+		{{/each}}
+	</ul>
+{{else}}
+	{{> MailChimpCampaignsLoader}}
+{{/if}}
+</template>
