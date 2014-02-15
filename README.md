@@ -43,11 +43,11 @@ MailChimpOptions.apiKey = '<Your MailChimp API Key>';
 MailChimpOptions.listId = '<ID of your default mailing list>';
 ```
 
-or in your client's Meteor.startup():
+Or in your clients's Meteor.startup():
 
 ```javascript
-Session.setDefault( 'MailChimpOptions.apiKey', '<Your MailChimp API Key>' );
-Session.setDefault( 'MailChimpOptions.listId', '<ID of your default mailing list>' );
+Session.set( 'MailChimpOptions.apiKey', "<Your MailChimp API Key>" );
+Session.set( 'MailChimpOptions.listId', "<ID of your default mailing list>" );
 ```
 
 This way you don't have to pass these parameters on each call.
@@ -113,6 +113,13 @@ For convenience, there's also a general call (a shortcut to MailChimp.call()):
  * `params` Parameters to pass to the API method.
  * `callback` Callback function for returned data or errors with two parameters. The first one being an error object which is null when no error occured, the second one an object with all information retrieved as long as no error occured.
 
+Also for convenience, there are utility methods (**client only!**):
+
+### `campaigns()`
+**List all campaigns for a given list**
+
+ * **REACTIVE** - will re-render the template if session variable 'MailChimpOptions.listId' changes
+
 ## Example
 
 ```javascript
@@ -120,6 +127,12 @@ if ( Meteor.isServer ) {
 	// Set it once and reuse many times
 	MailChimpOptions.apiKey = "<Your MailChimp API Key>";
 	MailChimpOptions.listId = "<ID of your default mailing list>";
+}
+
+if ( Meteor.isClient ) {
+	// Set it once and reuse many times
+	Session.set( 'MailChimpOptions.apiKey', "<Your MailChimp API Key>" );
+	Session.set( 'MailChimpOptions.listId', "<ID of your default mailing list>" );
 }
 
 try {
@@ -148,6 +161,11 @@ mailingCampaigns.list(
 ```
 
 ## Changelog
+
+### v0.2.0
+ * On client, MailChimpCampaigns methods now read API Key from session variable 'MailChimpOptions.apiKey' as well
+ * On client, MailChimpCampaigns methods now read list ID from session variable 'MailChimpOptions.listId' as well
+ * Added reactive list of all campaigns for a given mailing list - will re-render the template if session variable 'MailChimpOptions.listId' changes
 
 ### v0.1.0
  * Initial release
