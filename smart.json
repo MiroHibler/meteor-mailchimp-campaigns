@@ -3,7 +3,7 @@
 	"description"	: "MailChimp Campaigns - the Meteor way",
 	"homepage"		: "https://github.com/MiroHibler/meteor-mailchimp-campaigns",
 	"author"		: "Miro Hibler (http://miro.hibler.me)",
-	"version"		: "0.2.0",
+	"version"		: "0.2.1",
 	"git"			: "https://github.com/MiroHibler/meteor-mailchimp-campaigns.git",
 	"packages"		: {
 		"mailchimp": "0.2.0"

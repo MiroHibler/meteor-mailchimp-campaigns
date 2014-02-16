@@ -162,6 +162,9 @@ mailingCampaigns.list(
 
 ## Changelog
 
+### v0.2.1
+ * Fixed bug: in campaigns() method, 'MailChimpOptions.apiKey' was compared to `null` instead of `undefined`
+
 ### v0.2.0
  * On client, MailChimpCampaigns methods now read API Key from session variable 'MailChimpOptions.apiKey' as well
  * On client, MailChimpCampaigns methods now read list ID from session variable 'MailChimpOptions.listId' as well
