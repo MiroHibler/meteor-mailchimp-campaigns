@@ -118,7 +118,8 @@ Also for convenience, there are utility methods (**client only!**):
 ### `campaigns()`
 **List all campaigns for a given list**
 
- * **REACTIVE** - will re-render the template if session variable 'MailChimpOptions.listId' changes
+ * **NEW** - will refresh the list if session variable `MailChimpOptions.listId` set to `-1`
+ * **REACTIVE** - will re-render the template if session variable `MailChimpOptions.listId` changes
 
 ## Example
 
@@ -162,12 +163,15 @@ mailingCampaigns.list(
 
 ## Changelog
 
+### v0.3.0
+ * Added `refresh` functionality to the list of campaigns - set session variable `MailChimpOptions.listId` to `-1` to initiate refresh of the same list, or new list ID for a new list
+
 ### v0.2.1
- * Fixed bug: in campaigns() method, 'MailChimpOptions.apiKey' was compared to `null` instead of `undefined`
+ * Fixed bug: in campaigns() method, `MailChimpOptions.apiKey` was compared to `null` instead of `undefined`
 
 ### v0.2.0
- * On client, MailChimpCampaigns methods now read API Key from session variable 'MailChimpOptions.apiKey' as well
- * On client, MailChimpCampaigns methods now read list ID from session variable 'MailChimpOptions.listId' as well
+ * On client, MailChimpCampaigns methods now read API Key from session variable `MailChimpOptions.apiKey` as well
+ * On client, MailChimpCampaigns methods now read list ID from session variable `MailChimpOptions.listId` as well
  * Added reactive list of all campaigns for a given mailing list - will re-render the template if session variable 'MailChimpOptions.listId' changes
 
 ### v0.1.0
