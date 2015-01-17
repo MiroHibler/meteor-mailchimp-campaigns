@@ -9,3 +9,17 @@
 	{{> MailChimpCampaignsLoader}}
 {{/if}}
 </template>
+
+<template name="MailChimpCampaignsItem">
+	<li id="{{id}}" class="{{itemClass}}"><a href="{{archive_url}}" target="_blank">{{title}}</a> <span>[{{subject}}]</span></li>
+</template>
+
+<template name="MailChimpCampaignsRefresh">
+	<a href="#" class="refresh">Refresh</a>
+</template>
+
+<template name="MailChimpCampaignsLoader">
+	<div class="loader">
+		<p>Loading...</p>
+	</div>
+</template>
