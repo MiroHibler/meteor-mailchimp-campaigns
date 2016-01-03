@@ -47,8 +47,8 @@ Use in your template:
 <div id="mailChimpCampaings">
 	<!-- There's also another utility template
 	     you can use to refresh the list -->
-	{{> MailChimpCampaingsRefresh}}
-	{{> MailChimpCampaings}}
+	{{> MailChimpCampaignsRefresh}}
+	{{> MailChimpCampaigns}}
 </div>
 ```
 
